@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sup de Voyage</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo">
+                <img src="image/logo.png" alt="Logo">
+            </div>
+            <div class="Titre">
+                <h1>Sup de Voyage</h1>
+                <a href="#about" class="decouvrir-btn">Découvrir</a>
+            </div>
+            <div class="lien-nav">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#about">A Propos</a></li>
+                <li><a href="#voyage">Voyage</a></li>
+                <li><a href="#gallerie">Gallerie</a></li>
+                <li><a href="#aboutMe">Autre réseau</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>A Propos</h2>
+            <p>Bonjour à tous et bienvenue sur mon Blog ! Je suis Thomas et dans ce Blog, je partage mon avis sur chaque voyage que j'ai effectué. <br> Je vous donne aussi les meilleurs conseils sur les coutumes locales et les choses à respecter en tant que touriste, car chaque pays a ses particularités. Vous trouverez également des bons plans, des adresses incontournables pour passer de super vacances, ainsi que des informations sur la meilleure période pour visiter chaque endroit et profiter pleinement de votre séjour sans vous ennuyer. <br> Alors, prêts à découvrir de nouvelles destinations avec moi ?</p>
+        </section>
+        <section id="voyage">
+            <h2>Mes Voyages</h2>
+            <p>Voici tous mes voyages actuels</p>
+            <!-- Boutons pour les pays -->
+            <div class="voyage-buttons">
+                <button class="open-popup btn-espagne" data-target="popup-espagne">Espagne</button>
+                <button class="open-popup btn-portugal" data-target="popup-portugal">Portugal</button>
+                <button class="open-popup btn-italie" data-target="popup-italie">Italie</button>
+            </div>
+            
+            <!-- Popups -->
+            <div class="popup" id="popup-espagne">
+                <div class="popup-content">
+                    <span class="close-popup">&times;</span>
+                    <h3>Mon Voyage au espagne</h3>
+                    <p>Le Japon est un pays incroyable ! J'ai visité Tokyo, Kyoto et Osaka. La culture, la nourriture et les paysages sont magnifiques.</p>
+                </div>
+            </div>
+            
+            <div class="popup" id="popup-portugal">
+                <div class="popup-content">
+                    <span class="close-popup">&times;</span>
+                    <h3>Mon Voyage aux Portugal</h3> 
+                    <p></p>
+                </div>
+            </div>
+            
+            <div class="popup" id="popup-italie">
+                <div class="popup-content">
+                    <span class="close-popup">&times;</span>
+                    <h3>Mon Voyage en Italie</h3>
+                    <p>Rome, Venise et Florence étaient mes destinations. L'Italie est un pays riche en histoire et en gastronomie.</p>
+                </div>
+            </div>
+        </section>
+        <section id="gallerie">
+            <h2>Gallerie</h2>
+            <div class="gallery">
+                <img src="image/boat-montagne.jpg" alt="Photo 1">
+                <img src="image/gondole.jpg" alt="Photo 2">
+                <img src="image/rome-vatican.jpg" alt="Photo 3">
+                <img src="image/venice-pont.jpg" alt="Photo 4">
+                <img src="image/lisbon.jpg" alt="Photo 5">
+            </div>
+        </section>
+        <section id="aboutMe">
+            <h2>Découvrez mes autres réseaux</h2>
+        <div class="reseaux">
+            <div class="reseau" onclick="ouvrirRéseau('Instagram')">
+                <img src="image/instagram.webp" alt="Instagram">
+                <p>Instagram</p>
+            </div>
+            <div class="reseau" onclick="ouvrirRéseau('YouTube')">
+                <img src="image/youtube.webp" alt="YouTube">
+                <p>YouTube</p>
+            </div>
+            <div class="reseau" onclick="ouvrirRéseau('X')" >
+                <img src="image/X.png" alt="X">
+                <p>X</p>
+            </div>
+        </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Vous avez des quetion ? Contactez-nous</p>
+            <form action="">
+                <input type="text" placeholder="Sujet" required>
+                <input type="email" placeholder="Email" required><br>
+                <textarea placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+                <li><a href="#">Retour à l'Accueil</a></li>
+            </form>
+        </section>
+    </main>
+
+    <button class="menu-button" onclick="toggleMenu()">Menu</button>
+    <div class="menu-overlay" onclick="toggleMenu()"></div>
+    <div class="menu-container">
+        <ul>
+            <li><a href="#" onclick="closeMenu()">Accueil</a></li>
+            <li><a href="#about" onclick="closeMenu()">A Propos</a></li>
+            <li><a href="#voyage" onclick="closeMenu()">Voyage</a></li>
+            <li><a href="#gallerie" onclick="closeMenu()">Gallerie</a></li>
+            <li><a href="#aboutMe" onclick="closeMenu()">Autre réseau</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Fonction pour ouvrir et fermer le menu
+        function toggleMenu() {
+            document.body.classList.toggle('menu-open');
+        }
+
+        // Fonction pour fermer le menu lorsqu'un élément est cliqué
+        function closeMenu() {
+            document.body.classList.remove('menu-open');
+        }
+        // Ouvrir le popup
+    document.querySelectorAll(".open-popup").forEach(button => {
+        button.addEventListener("click", () => {
+            const targetPopup = button.getAttribute("data-target");
+            document.getElementById(targetPopup).style.display = "flex";
+        });
+    });
+
+    // Fermer le popup
+    document.querySelectorAll(".close-popup").forEach(closeBtn => {
+        closeBtn.addEventListener("click", () => {
+            closeBtn.parentElement.parentElement.style.display = "none";
+        });
+    });
+
+    // Fermer en cliquant à l'extérieur
+    document.querySelectorAll(".popup").forEach(popup => {
+        popup.addEventListener("click", (e) => {
+            if (e.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+    });
+    </script>
+
+    <footer>
+        &copy; 2025 - Tout droit réservés
+    </footer>
+</body>
+</html>

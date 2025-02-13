@@ -1,0 +1,501 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: white;
+    height: 100vh;
+}
+
+header {
+    position: relative;
+    background-image: url('image/mountains-7427623_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh; /* Hauteur du header */
+
+}
+
+.nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+}
+.nav .logo {
+    margin-right: 1400px;
+}
+.nav .logo img {
+    height: 100px;
+}
+
+.Titre h1 {
+    font-family:'Times New Roman', Times, serif ;
+    font-size: 70px; /* Taille du titre */
+    font-weight: bold;
+    margin-left: -1000px;
+    margin-top: 250px;
+    color: whitesmoke;
+}
+.decouvrir-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: -50px;
+    margin-left: -845px;
+    background-color: darkgreen;
+    color: white;
+    text-decoration: none;
+    border-radius: 100px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.decouvrir-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* Menu déroulant */
+.lien-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    visibility: hidden; /* Masquer par défaut */
+    flex-direction: column; /* Pour afficher les liens en colonne quand le menu est ouvert */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour le menu déroulant */
+    padding: 10px 0;
+    text-align: center;
+    display: none; /* Masqué par défaut */
+}
+
+.lien-nav li {
+    display: block;
+    padding: 10px;
+}
+
+.lien-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.lien-nav a:hover {
+    color: #ff6347;
+    text-decoration: underline;
+}
+
+/* Afficher le menu déroulant quand le menu est ouvert */
+.menu-open .lien-nav {
+    display: block; /* Afficher les liens */
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.menu-open .menu-overlay {
+    display: block;
+}
+
+.menu-button {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    background: darkgreen;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 20px;
+    z-index: 20;
+}
+
+.menu-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    z-index: 30;
+}
+
+.menu-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-container ul li {
+    padding: 15px;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu-container ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-container ul li a:hover {
+    text-decoration: underline;
+    color: #ff6347;
+}
+
+.menu-open .menu-container {
+    display: block;
+}
+
+.menu-open header {
+    filter: blur(5px);
+}
+
+.menu-open body {
+    overflow: hidden;
+}
+
+section#about {
+    flex-direction: column;
+    text-align: center;
+    margin-top: -10px;
+    background-color: pink;
+    height: 200px;
+
+}
+
+section#voyage {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 25px;
+    background-color:;
+    height: 500px;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    /* Style des boutons */
+    .voyage-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .voyage-buttons button {
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .voyage-buttons button:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-espagne {
+        background-image: url(image/espagne.jpg);
+        width: 500px;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+    }
+    .btn-portugal { 
+        background-image: url(image/portugal.webp);
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 500px;
+        height: 300px;
+    }
+    .btn-italie {
+        background-image: url(image/italie.jpg);
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 500px;
+
+    }
+
+
+    /* Styles du popup */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .popup-content {
+        background: white;
+        padding: 20px;
+        width: 60%;
+        height: 80%;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow-y: auto; /* Active le scroll */
+    }
+
+    .popup-content h3 {
+        margin-top: 0;
+        font-size: 24px;
+    }
+
+    .popup-content p {
+        font-size: 18px;
+        text-align: justify;
+        margin: 15px 0;
+        padding: 0 15px;
+    }
+
+    .popup-content img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    /* Bouton de fermeture */
+    .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .close-popup:hover {
+        color: red;
+    }
+}
+section#gallerie {
+    flex-direction: column;
+    text-align: center;
+    height: 900px;
+    .gallery {
+        margin-left: 200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-auto-rows: 150px;
+        gap: 10px;
+        padding: 20px;
+        max-width: 1000px;
+    }
+    .gallery img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: transform 1s ease;
+    }
+    .gallery img:hover {
+        transform: scale(1.01);
+        opacity: 90%;
+    }
+     .gallery img:nth-child(1) {
+        grid-column: span 3;
+        grid-row: span 3;
+    }
+    .gallery img:nth-child(2) {
+        grid-column: span 3;
+        grid-row: span 3;
+    }
+    .gallery img:nth-child(3) {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+     .gallery img:nth-child(4) {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+    .gallery img:nth-child(5) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+
+section#aboutMe {
+        background-color: #fff;
+        text-align: center;
+        padding: 40px 20px;
+        height: 400px;
+
+    .reseaux {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .reseau {
+        background-color: white;
+        padding: 20px;
+        border-radius: 90px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .reseau img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .reseau:hover {
+        transform: scale(1.1);
+    }
+
+    .reseau p {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+}
+
+section#contact {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    margin-left: 400px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+section#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+section#contact p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+section#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+section#contact input, section#contact textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+section#contact textarea {
+    height: 120px;
+}
+
+section#contact button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+section#contact button:hover {
+    background-color: #45a049;
+}
+
+section#contact li {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+section#contact li a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 1rem;
+}
+
+section#contact li a:hover {
+    text-decoration: underline;
+}
+}
+
+
